@@ -1,4 +1,3 @@
-import Navbar from "@/app/components/Navbar";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Kumbh_Sans } from "next/font/google";

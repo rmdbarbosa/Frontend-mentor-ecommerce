@@ -1,16 +1,16 @@
 "use client";
 
-import { useState } from "react";
 import Navbar from "./components/Navbar";
 import ProductCard from "./components/ProductCard";
+import { CartProvider } from "./context/cart";
 
 export default function Home() {
-  const [productCart, setProductCart] = useState();
-
   return (
     <main>
-      <Navbar />
-      <ProductCard />
+      <CartProvider>
+        <Navbar />
+        <ProductCard />
+      </CartProvider>
     </main>
   );
 }

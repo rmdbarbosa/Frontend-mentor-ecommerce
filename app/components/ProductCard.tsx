@@ -1,14 +1,21 @@
 "use client";
 
-import React from "react";
+import React, { useContext } from "react";
 import { useState } from "react";
 import Lightbox from "./Lightbox";
+import { CartContext } from "../context/cart";
 
 export default function ProductCard() {
   const [productImg, setProductImg] = useState("/image-product-1.jpg");
   const [selected, setSelected] = useState(1);
   const [qty, setQty] = useState(1);
   const [lightbox, setLightbox] = useState(false);
+
+  const cartContext = useContext(CartContext);
+  const { addToCart } = cartContext || {
+    cartItems: [],
+    addToCart: () => {}, // default function if addToCart is not available
+  };
 
   const thumbnailImages = [
     "image-product-1-thumbnail.jpg",
@@ -17,7 +24,7 @@ export default function ProductCard() {
     "image-product-4-thumbnail.jpg",
   ];
 
-  const handleImgChange = (e) => {
+  const handleImgChange = (e: React.MouseEvent<HTMLImageElement>) => {
     switch (e.currentTarget.attributes[1].nodeValue) {
       case "image-product-1-thumbnail.jpg":
         setProductImg("/image-product-1.jpg");
@@ -74,7 +81,7 @@ export default function ProductCard() {
           <ul className="flex justify-between w-[100%]">
             {thumbnailImages.map((img, index) => (
               <li key={index} className="relative">
-                {productImg.includes(index + 1) && (
+                {productImg.includes((index + 1).toString()) && (
                   <div className="border border-orange rounded-xl absolute z-10 w-[100%] h-[100%] bg-white-with-opacity"></div>
                 )}
                 <img
@@ -130,7 +137,18 @@ export default function ProductCard() {
           </ul>
           <div className="flex gap-4 items-center justify-center bg-orange rounded-lg text-white min-h-[3rem] mt-6 lg:w-[14rem] lg:mb-5">
             <img src="/icon-cart-white.svg" alt="cart-img" />
-            <button>Add to cart</button>
+            <button
+              onClick={() => {
+                addToCart({
+                  name: "Fall Limited Edition Sneakers",
+                  quantity: qty,
+                  price: 125.0,
+                  img: "/image-product-1-thumbnail.jpg",
+                });
+              }}
+            >
+              Add to cart
+            </button>
           </div>
         </div>
       </div>
