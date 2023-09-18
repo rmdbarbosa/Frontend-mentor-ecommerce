@@ -6,6 +6,7 @@ import { useState } from "react";
 export default function ProductCard() {
   const [productImg, setProductImg] = useState("/image-product-1.jpg");
   const [selected, setSelected] = useState(1);
+  const [qty, setQty] = useState(1);
 
   const thumbnailImages = [
     "image-product-1-thumbnail.jpg",
@@ -100,7 +101,7 @@ export default function ProductCard() {
         <div className="lg:flex lg:items-center lg:gap-6">
           <ul className="flex justify-around">
             <li>
-              <button>
+              <button onClick={() => setQty((prev) => prev - 1)}>
                 <img src="/icon-minus.svg" alt="minus-img" />
               </button>
             </li>
@@ -108,11 +109,12 @@ export default function ProductCard() {
               <input
                 className="text-center font-bold lg:max-w-[5rem]"
                 type="number"
-                defaultValue={0}
+                value={qty}
+                onChange={(e) => setQty(Number(e.target.value))}
               />
             </li>
             <li>
-              <button>
+              <button onClick={() => setQty((prev) => prev + 1)}>
                 <img src="/icon-plus.svg" alt="plus-img" />
               </button>
             </li>
