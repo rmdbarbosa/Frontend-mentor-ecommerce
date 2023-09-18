@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       colors: {
         "modal-overlay": "rgba(0, 0, 0, 0.64)",
+        orange: "hsl(26, 100%, 55%)",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

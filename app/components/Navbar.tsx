@@ -8,12 +8,12 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="p-5 flex justify-between items-center border border-neutral-50 lg:px-32">
+      <div className="p-5 flex justify-between items-center border border-neutral-50 md:px-16 lg:px-32">
         <ul className="flex items-center gap-3">
           <li className="flex">
             <button onClick={() => setDialog(true)}>
               <img
-                className="lg:hidden"
+                className="md:hidden"
                 src="/icon-menu.svg"
                 alt="mobile-menu-dropdown"
               />
@@ -46,7 +46,7 @@ export default function Navbar() {
           </li>
 
           <li className="font-bold text-3xl text-neutral-600 mb-1">sneakers</li>
-          <ul className="gap-6 text-neutral-400 text-sm ml-12 hidden lg:flex">
+          <ul className="gap-6 text-neutral-400 text-sm ml-12 hidden md:flex">
             {navbar.map((item) => (
               <li key={item}>{item}</li>
             ))}
@@ -58,7 +58,7 @@ export default function Navbar() {
           </li>
           <li>
             <img
-              className="w-[20px] lg:w-[40px]"
+              className="w-[20px] md:w-[40px]"
               src="/image-avatar.png"
               alt="profile-image"
             />
