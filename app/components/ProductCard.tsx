@@ -2,11 +2,13 @@
 
 import React from "react";
 import { useState } from "react";
+import Lightbox from "./Lightbox";
 
 export default function ProductCard() {
   const [productImg, setProductImg] = useState("/image-product-1.jpg");
   const [selected, setSelected] = useState(1);
   const [qty, setQty] = useState(1);
+  const [lightbox, setLightbox] = useState(false);
 
   const thumbnailImages = [
     "image-product-1-thumbnail.jpg",
@@ -58,7 +60,14 @@ export default function ProductCard() {
       </div>
       {/* LG+ Sizes */}
       <div className="hidden lg:flex lg:flex-col lg:max-w-[35%] lg:gap-6">
-        <div>
+        <div onClick={() => setLightbox(!lightbox)}>
+          <Lightbox
+            productImg={productImg}
+            lightbox={lightbox}
+            thumbnailImage={thumbnailImages}
+            selected={selected}
+            setSelected={setSelected}
+          />
           <img className="rounded-xl" src={productImg} alt="product-img" />
         </div>
         <div>
