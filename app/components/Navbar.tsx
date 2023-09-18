@@ -1,14 +1,16 @@
 "use client";
 
 import React, { useState } from "react";
+import Cart from "./Cart";
 
 export default function Navbar() {
   const [dialog, setDialog] = useState(false);
+  const [cart, setCart] = useState(false);
   const navbar = ["Collections", "Men", "Women", "About", "Contact"];
 
   return (
     <>
-      <div className="p-5 flex justify-between items-center border border-neutral-50 md:px-16 lg:px-32">
+      <div className="relative p-5 flex justify-between items-center border border-neutral-50 md:px-16 lg:px-32">
         <ul className="flex items-center gap-3">
           <li className="flex">
             <button onClick={() => setDialog(true)}>
@@ -53,7 +55,7 @@ export default function Navbar() {
           </ul>
         </ul>
         <ul className="flex gap-6 items-center">
-          <li>
+          <li onClick={() => setCart(!cart)}>
             <img src="/icon-cart.svg" alt="cart-img" />
           </li>
           <li>
@@ -65,6 +67,8 @@ export default function Navbar() {
           </li>
         </ul>
       </div>
+      {/** Cart */}
+      <Cart cart={cart} />
     </>
   );
 }
