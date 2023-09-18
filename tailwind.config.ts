@@ -11,6 +11,8 @@ const config: Config = {
       colors: {
         "modal-overlay": "rgba(0, 0, 0, 0.64)",
         orange: "hsl(26, 100%, 55%)",
+        "orange-with-opacity": "rgba(255, 125, 26, 0.25)",
+        "white-with-opacity": "rgba(255, 255, 255, 0.60)",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

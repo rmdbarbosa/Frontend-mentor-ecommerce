@@ -45,7 +45,7 @@ export default function Navbar() {
             {/* end of mobile modal */}
           </li>
 
-          <li className="font-bold text-3xl text-neutral-600 mb-1">sneakers</li>
+          <li className="font-bold text-3xl text-neutral-800 mb-1">sneakers</li>
           <ul className="gap-6 text-neutral-400 text-sm ml-12 hidden md:flex">
             {navbar.map((item) => (
               <li key={item}>{item}</li>
