@@ -43,7 +43,10 @@ export default function Cart(props: any) {
                   </ul>
                 </div>
               </div>
-              <div onClick={() => clearCart()}>
+              <div
+                onClick={() => clearCart()}
+                className="cursor-pointer hover:scale-90"
+              >
                 <img src="/icon-delete.svg" alt="" />
               </div>
             </div>

@@ -85,7 +85,7 @@ export default function ProductCard() {
                   <div className="border border-orange rounded-xl absolute z-10 w-[100%] h-[100%] bg-white-with-opacity"></div>
                 )}
                 <img
-                  className="rounded-xl max-w-[4rem]"
+                  className="rounded-xl max-w-[4rem] cursor-pointer"
                   src={img}
                   onClick={(e) => handleImgChange(e)}
                   alt="product-img-thumbnail"
@@ -135,7 +135,7 @@ export default function ProductCard() {
               </button>
             </li>
           </ul>
-          <div className="flex gap-4 items-center justify-center bg-orange rounded-lg text-white min-h-[3rem] mt-6 lg:w-[14rem] lg:mb-5">
+          <div className="flex gap-4 items-center justify-center bg-orange rounded-lg text-white min-h-[3rem] mt-6 lg:w-[14rem] lg:mb-5 cursor-pointer active:bg-amber-800 hover:scale-90">
             <img src="/icon-cart-white.svg" alt="cart-img" />
             <button
               onClick={() => {

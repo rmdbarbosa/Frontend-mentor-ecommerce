@@ -50,12 +50,14 @@ export default function Navbar() {
           <li className="font-bold text-3xl text-neutral-800 mb-1">sneakers</li>
           <ul className="gap-6 text-neutral-400 text-sm ml-12 hidden md:flex">
             {navbar.map((item) => (
-              <li key={item}>{item}</li>
+              <li key={item} className="cursor-pointer hover:text-orange">
+                {item}
+              </li>
             ))}
           </ul>
         </ul>
-        <ul className="flex gap-6 items-center">
-          <li onClick={() => setCart(!cart)}>
+        <ul className="flex gap-6 items-center cursor-pointer">
+          <li className="hover:scale-110" onClick={() => setCart(!cart)}>
             <img src="/icon-cart.svg" alt="cart-img" />
           </li>
           <li>
